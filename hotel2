@@ -1,0 +1,79 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package howltel;
+
+/**
+ *
+ * @author wili ganteng
+ */
+public class hotel2 {
+    protected String nama;
+    protected int tipe, waktu;
+    private String kamar;
+    private int tarif, total;
+    
+    public void setName(String nama){
+        this.nama = nama;
+    }
+    
+    public void setTipe(int tipe){
+        this.tipe = tipe;
+    }
+    
+    public void setwaktu(int waktu){
+        this.waktu = waktu;
+    }
+    
+    public String getName(){
+        return nama;
+    }
+    
+    public int getTipe(){
+        return tipe;
+    }
+    
+    public int getWaktu(){
+        return waktu;
+    }
+    
+    public String get_Kamar(){
+        if(tipe == 1){
+            kamar = "Superior";
+        } else if(tipe == 2){
+            kamar = "Deluxe";
+        } else if(tipe == 3){
+            kamar = "Premium";
+        }
+        return kamar;
+    }
+    
+    public int get_Harga(){
+        if (waktu <= 2 && tipe == 1){
+            tarif = 100000;
+        } else if (waktu >= 3 && waktu <= 4 && tipe == 1){
+            tarif = 90000;
+        } else if (waktu >5 && tipe == 1){
+            tarif = 80000;
+        } else if (waktu <=2 && tipe == 2){
+            tarif = 150000;
+        } else if (waktu >= 3 && waktu <= 4 && tipe == 2){
+            tarif = 135000;
+        } else if (waktu >5 && tipe == 2){
+            tarif = 120000;
+        } else if (waktu <= 2 && tipe == 3){
+            tarif = 200000;
+        } else if (waktu >= 3 && waktu <= 4 && tipe == 3){
+            tarif = 180000;
+        } else if (waktu >5 && tipe == 3){
+            tarif = 160000;
+        }
+        return tarif;
+    }
+    
+    public int get_Total(){
+        total = tarif*waktu;
+        return total;
+    }
+}

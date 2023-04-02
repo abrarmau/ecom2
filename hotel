@@ -1,0 +1,83 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package howltel;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author wili ganteng
+ */
+public class hotel {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        Scanner name = new Scanner(System.in);
+        
+        String nama;
+        int waktu, tipe;
+        boolean ulang = true;
+        hotel2 hotelaja = new hotel2();
+        
+        while(ulang){
+            System.out.println("");
+            System.out.println("=============================================================");
+            System.out.println("|                     ( Hotel Caniago )                     |");
+            System.out.println("=============================================================");
+            System.out.println("|   No  |   Superior    |   Deluxe  |   Premium |   /night  |");
+            System.out.println("|   1.  |   100.000     |   150.000 |   200.000 |   1-2     |");
+            System.out.println("|   2.  |   90.000      |   135.000 |   180.000 |   3-4     |");
+            System.out.println("|   3.  |   80.000      |   120.000 |   160.000 |   >5      |");
+            System.out.println("=============================================================");
+            System.out.println("");
+            
+            System.out.print("Masukkan Nama : ");
+            nama = input.nextLine();
+            hotelaja.setName(nama);
+            
+            System.out.println("");
+            System.out.println("=========================");
+            System.out.println("|   No. |   Tipe Kamar  |");
+            System.out.println("|   1.  |   Superior    |");
+            System.out.println("|   2.  |   Deluxe      |");
+            System.out.println("|   3.  |   Premium     |");
+            System.out.println("=========================");
+            System.out.println("");
+            
+            System.out.print("Pilih kamar           : ");
+            tipe = input.nextInt();
+            hotelaja.setTipe(tipe);
+            if(tipe >= 4){
+                System.out.println("Kamar tidak tersedia.");
+                return;
+            }
+            
+            System.out.print("Lama menginap (/night): ");
+            waktu = input.nextInt();
+            hotelaja.setwaktu(waktu);
+            
+            System.out.println("");
+            System.out.println("==================Total==================");
+            System.out.println("Nama Pelanggan  : " +hotelaja.getName());
+            System.out.println("Tipe Kamar      : " +hotelaja.get_Kamar());
+            System.out.println("Lama Menginap   : " +hotelaja.getWaktu()+ "/night");
+            System.out.println("Tarif permalam  : Rp." +hotelaja.get_Harga());
+            System.out.println("Total           : " +hotelaja.get_Total());
+            System.out.println("=========================================");
+            System.out.println("");
+            
+            System.out.println("Mau memesan ulang? (y/n)");
+            char pilih = input.next().charAt(0);
+            switch(pilih){
+                case 'y':
+                    break;
+                case 'n':
+                    System.out.println("Terimakasi telah memesan hotel kami!");
+                    System.exit(0);
+                default:
+                    return;
+            }
+        }
+    }
+}
